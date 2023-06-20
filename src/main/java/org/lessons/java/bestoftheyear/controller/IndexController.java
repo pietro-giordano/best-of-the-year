@@ -22,20 +22,22 @@ public class IndexController {
 
     @GetMapping("/movies")
     public String movies(Model model) {
-        String moviesTitle = "";
+        List<String> movieTitles = new ArrayList<>();
         for (Movie movie : getBestMovies()) {
-            moviesTitle += movie.getTitle();
+            movieTitles.add(movie.getTitle());
         }
+        String moviesTitle = String.join(", ", movieTitles);
         model.addAttribute("moviesTitle", moviesTitle);
         return "movies";
     }
 
     @GetMapping("/songs")
     public String songs(Model model) {
-        String songsTitle = "";
+        List<String> songTitles = new ArrayList<>();
         for (Song song : getBestSongs()) {
-            songsTitle += song.getTitle() + ", ";
+            songTitles.add(song.getTitle());
         }
+        String songsTitle = String.join(", ", songTitles);
         model.addAttribute("songsTitle", songsTitle);
         return "songs";
     }
