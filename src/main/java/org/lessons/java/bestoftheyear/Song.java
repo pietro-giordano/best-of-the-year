@@ -1,11 +1,14 @@
 package org.lessons.java.bestoftheyear;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Song {
-    private int id = 0;
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private int id;
     private String title;
 
     public Song(String title) {
-        this.id = id++;
+        this.id = count.incrementAndGet();
         this.title = title;
     }
 

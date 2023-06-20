@@ -24,7 +24,7 @@ public class IndexController {
     public String movies(Model model) {
         String moviesTitle = "";
         for (Movie movie : getBestMovies()) {
-            moviesTitle += movie.getTitle() + ", ";
+            moviesTitle += movie.getTitle();
         }
         model.addAttribute("moviesTitle", moviesTitle);
         return "movies";
