@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <th:block th:replace="fragments :: head"></th:block>
     <title>Best of the year</title>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}">
 </head>
 <body>
-    <h1>
-        Best of the year by [[${name}]]
-    </h1>
+    <div class="d-flex flex-column align-items-center">
+        <nav th:replace="fragments :: navbar"></nav>
 
-    <a th:href="@{/movies}">Best Movies</a>
-    <a th:href="@{/songs}">Best Movies</a>
+        <div class="w-25">
+            <img th:src="@{/img/trophy.jpg}" class="img-fluid">
+        </div>
 
-    <script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js}"></script>
+        <h1>
+            Best of the year by [[${name}]]
+        </h1>
+    </div>
 </body>
 </html>
