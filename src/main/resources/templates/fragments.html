@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}">
+    <script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js}"></script>
+
+    <title>Title</title>
+</head>
+<body>
+    <!-- button fragment -->
+    <a th:fragment="button(link, title)"
+       th:href="@{link}"
+       th:text="{$title}"
+       class="btn btn-primary">
+    </a>
+</body>
+</html>

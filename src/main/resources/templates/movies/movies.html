@@ -8,11 +8,13 @@
 <body>
     <ul>
         <li th:each="movie : ${movies}">
-            <a th:href="@{|/movies/${movie.id}|}">
+            <a th:href="@{/movies/{id}(id=${movie.id})}">
                 [[${movie.title}]]
             </a>
         </li>
     </ul>
+
+    <a th:href="@{/}" class="btn btn-primary">Back</a>
 
     <script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js}"></script>
 </body>

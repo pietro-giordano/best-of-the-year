@@ -8,11 +8,13 @@
 <body>
     <ul>
         <li th:each="song : ${songs}">
-            <a th:href="@{|/songs/${song.id}|}">
+            <a th:href="@{/songs/{id}(id=${song.id})}">
                 [[${song.title}]]
             </a>
         </li>
     </ul>
+
+    <a th:href="@{/}" class="btn btn-primary">Back</a>
 
     <script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js}"></script>
 </body>

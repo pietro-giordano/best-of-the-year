@@ -25,7 +25,7 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public String movieShow (@PathVariable int id, Model model) {
+    public String movieShow (@PathVariable("id") int id, Model model) {
         Movie selectedMovie = null;
         for(Movie movie: getBestMovies()){
             if(movie.getId() == id){

@@ -25,7 +25,7 @@ public class SongController {
     }
 
     @GetMapping("/{id}")
-    public String songShow (@PathVariable int id, Model model) {
+    public String songShow (@PathVariable("id") int id, Model model) {
         Song selectedSong = null;
         for(Song song: getBestSongs()){
             if(song.getId() == id){
