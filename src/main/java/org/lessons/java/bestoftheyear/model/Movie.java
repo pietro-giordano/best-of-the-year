@@ -1,14 +1,12 @@
 package org.lessons.java.bestoftheyear.model;
 
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Movie {
-    private static final AtomicInteger count = new AtomicInteger(0);
     private int id;
     private String title;
 
-    public Movie(String title) {
-        this.id = count.incrementAndGet();
+    public Movie(int id, String title) {
+        this.id = id;
         this.title = title;
     }
 
